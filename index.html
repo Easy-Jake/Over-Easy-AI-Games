@@ -1,43 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Escape The Diner</title>
+    <title>Escape The Diner</title>
+	<title>Button Example</title>
 </head>
 <body>
 
-	<h1>Escape The Diner</h1>
+    <h1>Escape The Diner</h1>
 
-	<img src="Dungeon1.jpg" alt="Dungeon1" style="width:100%; max-width:500px;">
+    <img src="dungeon1.png" alt="Dungeon1" style="width:100%; max-width:500px;">
 
-	<p>You wake up to the smell of coffee and bacon, you're in a diner. You have no memory of how you got here. The only thing you know is that you are hungry and need to escape.</p>
+    <p>You wake up to the smell of coffee and bacon, you're in a diner. You have no memory of how you got here. The only thing you know is that you are hungry and need to escape.</p>
 
-	<p>There is a chest in the middle of the room. It is locked with a combination lock. The lock has three dials, each with the numbers 0-9. You see a note on the chest that reads:</p>
+    <p>There is a chest in the middle of the room. It is locked with a combination lock. The lock has three dials, each with the numbers 0-9. You see a note on the chest that reads:</p>
 
-	<blockquote>
-		<p>I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every human being. What am I?</p>
-	</blockquote>
+    <blockquote>
+        <p>I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost every human being. What am I?</p>
+    </blockquote>
 
-	<p>What combination do you enter?</p>
-	<p>This is extremely hard, but in the end i'm giving n0 clues</p>
+    <p>What combination do you enter?</p>
 
-	<form onsubmit="return checkAnswer()">
-		<input type="text" id="answer" maxlength="3">
-		<input type="submit" value="Enter">
-	</form>
+    <form onsubmit="return checkAnswer()">
+        <input type="text" id="answer" maxlength="3">
+        <input type="submit" value="Enter">
+    </form>
 
-	<script>
-		function checkAnswer() {
-			var answer = document.getElementById("answer").value;
-			if (answer == "840") {
-				alert("You enter the correct combination and the chest opens. Inside you find the key to the door. Congratulations, you have escaped!");
-				location.reload();
-				return false;
-			} else {
-				alert("You enter the wrong combination. Nothing happens.");
-				return false;
-			}
-		}
-	</script>
+    <img id="resultImage" src="" alt="" style="display:none; width:100%; max-width:500px;">
+    <audio id="correctSound" src="correct.mp3" preload="auto"></audio>
+    <audio id="wrongSound" src="wrong.mp3" preload="auto"></audio>
 
+    <script>
+        function checkAnswer() {
+            var answer = document.getElementById("answer").value;
+            var resultImage = document.getElementById("resultImage");
+            var correctSound = document.getElementById("correctSound");
+            var wrongSound = document.getElementById("wrongSound");
+
+            if (answer == "840" || answer == "220") {
+                resultImage.src = "correct.gif";
+                resultImage.alt = "Correct";
+                resultImage.style.display = "block";
+                correctSound.play();
+
+                alert("You enter the correct combination and the chest opens. Inside you find the key to the door. Congratulations, you have escaped!");
+                location.reload();
+                return false;
+            } else {
+                resultImage.src = "wrong.gif";
+                resultImage.alt = "Wrong";
+                resultImage.style.display = "block";
+                wrongSound.play();
+
+                alert("You enter the wrong combination. Nothing happens.");
+                return false;
+            }
+        }
+    </script>
+		<h1>Keep up with Over Easy AI</h1>
+
+		    <a href="https://www.overeasy.ai" target="_blank">
+        		<button>Over Easy AI</button>
+    </a>
 </body>
 </html>
+
+
