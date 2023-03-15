@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Escape the Dungeon</title>
+	<title>Escape The Diner</title>
 </head>
 <body>
 
 	<h1>Escape The Diner</h1>
 
-	<img src="dungeon1.png" alt="Dungeon1" style="width:100%; max-width:500px;">
+	<img src="Dungeon1.png" alt="Dungeon1" style="width:100%; max-width:500px;">
 
 	<p>You wake up to the smell of coffee and bacon, you're in a diner. You have no memory of how you got here. The only thing you know is that you are hungry and need to escape.</p>
 
@@ -18,6 +18,7 @@
 	</blockquote>
 
 	<p>What combination do you enter?</p>
+	<p>This is extremely hard, but in the end i'm giving n0 clues</p>
 
 	<form onsubmit="return checkAnswer()">
 		<input type="text" id="answer" maxlength="3">
@@ -27,7 +28,7 @@
 	<script>
 		function checkAnswer() {
 			var answer = document.getElementById("answer").value;
-			if (answer == "8 4 0") {
+			if (answer == "840") {
 				alert("You enter the correct combination and the chest opens. Inside you find the key to the door. Congratulations, you have escaped!");
 				location.reload();
 				return false;
